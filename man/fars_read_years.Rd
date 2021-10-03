@@ -16,6 +16,9 @@ a list of tibbles containing de data from each year.
 The function reads the data from every year in the vector input
 }
 \examples{
-fars_read_years(c(2010, 2011))
-
+\dontrun{
+fars2013 <- fars:::fars_read_years(2013)
+fars2013 <- fars:::fars_read_years("2013")
+fars1314 <- fars:::fars_read_years(c(2013, 2014))
+}
 }

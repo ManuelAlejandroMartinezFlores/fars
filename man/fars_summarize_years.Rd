@@ -16,6 +16,9 @@ a tibble with the amount of accidents per month in each year
 Creates a  tibble with the amount of accidents per month in each year
 }
 \examples{
-fars_summarize_years(c(2013, 2014))
+\dontrun{
+fars_summarize_years(c(2013, 2014, 2015))
+}
+
 
 }

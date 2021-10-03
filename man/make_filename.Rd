@@ -16,6 +16,7 @@ String of the form "accident_{year}.csv.bz2"
 This funciton generates a String of the format "accident_{year}.csv.bz2"
 }
 \examples{
-make_filename(2010)
-
+\dontrun{
+fars:::make_filename(2013)
+}
 }

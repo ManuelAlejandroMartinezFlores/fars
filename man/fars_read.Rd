@@ -18,4 +18,8 @@ This function reads the data from a csv into a dataframe to then coerce it into 
 \examples{
 fars_read("data.csv")
 
+
+\dontrun{
+fars_complete_2013 <- fars:::fars_read("accident_2013.csv.bz2")
+}
 }

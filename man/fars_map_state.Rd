@@ -11,9 +11,12 @@ fars_map_state(state.num, year)
 
 \item{year}{year of interest}
 }
-\value{
-plots an image
-}
 \description{
 Plots the accidents from a state in a specific year
+}
+\examples{
+\dontrun{
+fars_map_state(13, 2014)
+}
+
 }

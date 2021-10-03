@@ -1,0 +1,61 @@
+---
+title: "farsR Introduction"
+author: "Manuel Martinez"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{farsR Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+farsR makes working with data downloaded from the US National Highway Traffic Safety Administration's [Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) easy. It provides two simple functions to *process* and *plot*  the data:
+
+* `fars_summarize_years()`
+
+* `fars_map_state()`
+
+This document introduces you to farsR's two main functions, and shows you how to apply them to the respective data.
+
+*Important*: Both functions of the farsR package assume that the respective FARS data was downloaded before and that it resides in the current working directory in the following format: accident_[year].csv.bz2.
+
+## The data
+
+The farsR package comes with 3 files of FARS data from 2013 to 2015. We will demonstrate working with farsR's functions using data from 2013 and from 2014.
+
+We will copy the respective files to your current working directory.
+
+
+```{r}
+file.copy(system.file("extdata", "accident_2013.csv.bz2", package = "farsR"),getwd())
+file.copy(system.file("extdata", "accident_2014.csv.bz2", package = "farsR"),getwd())
+```
+
+
+## Summarizing data 
+
+Next, we will summarize the accidents included in the 2013 FARS report file by month and year in a tibble using `fars_summarize_years()`.
+
+```{r}
+library(farsR)
+fars2013 <- fars_summarize_years(2013)
+fars2013
+```
+
+Since `fars_summarize_years()` is vectorized you can also create a summary report for multiple years.
+
+```{r}
+fars_many_years <- fars_summarize_years(c(2013, 2014))
+fars_many_years
+```
+
+```{r}
+```
+
+## Plotting data
+
+You plot FARS data using `fars_map_state`. The function will plot all accident locations for a given year and federal state on a US federal state map.
+
+```{r}
+fars_map_state(13, 2014)
+```
